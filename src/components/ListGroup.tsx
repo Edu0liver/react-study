@@ -1,15 +1,11 @@
 import { useState } from 'react';
 
-export default function ListGroup() {
+interface Props {
+    items: string[];
+    heading: string;
+}
 
-    const items: string[] = [
-        'New York',
-        'Los Angeles',
-        'Chicago',
-        'Houston',
-        'Phoenix',
-        'Philadelphia',
-    ];
+export default function ListGroup({ items, heading }: Props) {
 
     const [selectedIndex, setSelectedIndex] = useState(-1);
 
@@ -17,7 +13,7 @@ export default function ListGroup() {
 
     return (
         <>  
-            <h1>List Group</h1>
+            <h1>{heading}</h1>
 
             {isVoidArray()}
 
