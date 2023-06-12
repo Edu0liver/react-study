@@ -1,6 +1,7 @@
 import { useState } from "react";
-import Pessoa from "./components/Pessoa";
-import Button from "./components/Button";
+import Pessoa from "../components/Pessoa";
+import Button from "../components/Button";
+import './Card.css'
 
 interface PessoaType {
   id: number;
@@ -9,7 +10,7 @@ interface PessoaType {
   profissao: string;
 }
 
-export default function App() {
+export default function Card() {
 
   const pessoas: PessoaType[] = [
     {
@@ -67,8 +68,9 @@ export default function App() {
   
   return (
     <>
-      {isVoidArray(pessoas) && <h1>Não há pessoas!</h1>}
-
+      <div className="void_array">{isVoidArray(pessoas) && <h1>Não há pessoas!</h1>}</div>
+      
+      <div className="card">
       {
         !isVoidArray(pessoas) &&
         <div>
@@ -77,6 +79,7 @@ export default function App() {
           <Button onClick={() => changePessoa(setPessoa, pessoas)}>Próximo</Button>
         </div>
       }
+      </div>
     </>
   )
 }

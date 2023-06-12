@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import './Button.css'
 
 interface Props {
     children: ReactNode;
@@ -7,6 +8,6 @@ interface Props {
 
 export default function Button({ children, onClick }: Props) {
   return (
-    <button onClick={onClick}>{children}</button>
+    <button id='button' onClick={onClick}>{children}</button>
   )
 }

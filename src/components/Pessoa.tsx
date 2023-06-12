@@ -1,3 +1,4 @@
+import './Pessoa.css'
 
 interface Props {
     name: string;
@@ -7,10 +8,12 @@ interface Props {
 
 export default function Pessoa({ name, age, profissao }: Props) {
     return (
-        <div>
+        <div id="pessoa">
             <h1>{name}</h1>
-            <p>Idade: {age}</p>
-            <p>Profissão: {profissao}</p>
+            <div id='data'>
+                <p>Idade: {age}</p>
+                <p>Profissão: {profissao}</p>
+            </div>
         </div>
     )
 }
