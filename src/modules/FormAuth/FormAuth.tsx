@@ -33,8 +33,8 @@ export default function FormAuth() {
         <div className="form">
           <Form className="form-signup" onSubmit={hadleSubmit}>
             <div className="inputs">
-              <Input type="email" name="email" onChange={(e)=> setEmail(e.target.value)} placeholder="Email"/>
-              <Input type="password" name='password' onChange={(e)=> setPassword(e.target.value)} placeholder="Password"/>
+              <Input type="email" name="email" value={email} onChange={(e)=> setEmail(e.target.value)} placeholder="Email"/>
+              <Input type="password" name='password' value={password} onChange={(e)=> setPassword(e.target.value)} placeholder="Password"/>
             </div>
             <div>
               <Input type="submit" value="Cadastrar" className="submit-button"/>
