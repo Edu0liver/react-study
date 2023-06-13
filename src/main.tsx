@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App'
+import FormAuth from './modules/Card/FormAuth/FormAuth'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <App/>
+    <FormAuth/>
   </React.StrictMode>,
 )
