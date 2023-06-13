@@ -1,3 +1,4 @@
+import { BaseSyntheticEvent, useState } from "react";
 import Form from "../../components/Form/Form";
 import Input from "../../components/Input/Input";
 import './FormAuth.css';
@@ -10,17 +11,20 @@ interface User {
 export default function FormAuth() {
 
   const users: User[] = [];
-  
-  const hadleSubmit = (event: any) => {
-    event.preventDefault();
 
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  
+  const hadleSubmit = (event: BaseSyntheticEvent) => {
+    event.preventDefault();
+    
     users.push({
-      email: event.target[0].value,
-      password: event.target[1].value,
+      email,
+      password,
     })
 
-    alert('Cadastrado com sucesso!');
-    console.log(users)
+    console.log('Cadastrado com sucesso!');
+    console.log(`Users:`, users);
   }
   
   return (
@@ -29,11 +33,11 @@ export default function FormAuth() {
         <div className="form">
           <Form className="form-signup" onSubmit={hadleSubmit}>
             <div className="inputs">
-              <Input type="email" name="email" placeholder="Email"/>
-              <Input type="password" name='password' placeholder="Password"/>
+              <Input type="email" name="email" onChange={(e)=> setEmail(e.target.value)} placeholder="Email"/>
+              <Input type="password" name='password' onChange={(e)=> setPassword(e.target.value)} placeholder="Password"/>
             </div>
             <div>
-              <Input type="submit" className="submit-button"/>
+              <Input type="submit" value="Cadastrar" className="submit-button"/>
             </div>
           </Form>
         </div>

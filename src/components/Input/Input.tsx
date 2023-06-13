@@ -1,9 +1,12 @@
+import { BaseSyntheticEvent } from "react";
 
 interface Props {
   type: string;
+  value?: string;
   className?: string;
   name?: string;
   placeholder?: string;
+  onChange?: (e: BaseSyntheticEvent) => void;
 }
 
 export default function Input({
@@ -11,6 +14,7 @@ export default function Input({
   className,
   name,
   placeholder,
+  onChange,
 }: Props) {
   return (
     <>
@@ -19,6 +23,7 @@ export default function Input({
         className={ className ?? '' }
         name={ name ?? '' }
         placeholder={ placeholder ?? '' }
+        onChange={onChange}
       />
     </>
   )
