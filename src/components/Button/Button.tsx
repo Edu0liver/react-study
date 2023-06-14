@@ -1,4 +1,4 @@
-import { BaseSyntheticEvent, ReactNode } from "react";
+import { BaseSyntheticEvent, Component, ReactNode } from "react";
 import './Button.css'
 
 interface Props {
@@ -8,8 +8,25 @@ interface Props {
   onClick?: (e?: BaseSyntheticEvent) => void;
 }
 
-export default function Button({ children, onClick, type, className }: Props) {
-  return (
-    <button type={ type ?? 'button' } className={ className?? 'button' } onClick={onClick}>{children}</button>
-  )
+export default class Button extends Component {
+
+  public props: Props;
+
+  constructor(props: Props) {
+    super(props)
+    this.props = props;
+    this.state = { hasError: false };
+  }
+
+  render() {
+    return (
+      <button
+        type={ this.props.type ?? 'button' }
+        className={ this.props.className ?? 'button' }
+        onClick={ this.props.onClick }
+      >
+        {this.props.children}
+      </button>
+    )
+  }
 }
