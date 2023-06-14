@@ -7,17 +7,16 @@ export default function Condicional () {
 
     const [condicional, setCondicional] = useState(false)
 
-    const aa = (e: BaseSyntheticEvent) => {
+    const showPhrase = (e: BaseSyntheticEvent) => {
         e.preventDefault()
-
-        setCondicional(e.target.value)
+        setCondicional(e.target[0].value)
     }
 
     return (
         <>
-        <Form>
-            <Input type='text' placeholder='Digite'/>
-            <Button type='submit' onClick={aa}>Submit</Button>
+        <Form onSubmit={showPhrase}>
+            <Input type='text' name='phrase' placeholder='Digite'/>
+            <Button type='submit'>Submit</Button>
         </Form>
 
         {condicional && (

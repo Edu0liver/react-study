@@ -5,7 +5,7 @@ interface Props {
   children: ReactNode;
   className?: string;
   type?: "button" | "submit" | "reset";
-  onClick: (e?: BaseSyntheticEvent) => void;
+  onClick?: (e?: BaseSyntheticEvent) => void;
 }
 
 export default function Button({ children, onClick, type, className }: Props) {
