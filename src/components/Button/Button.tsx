@@ -1,11 +1,11 @@
-import { FormEvent, ReactNode } from "react";
+import { BaseSyntheticEvent, ReactNode } from "react";
 import './Button.css'
 
 interface Props {
   children: ReactNode;
   className?: string;
   type?: "button" | "submit" | "reset";
-  onClick?: (e?: FormEvent) => void;
+  onClick?: (e?: BaseSyntheticEvent) => void;
 }
 
 export default function Button({ children, onClick, type, className }: Props) {

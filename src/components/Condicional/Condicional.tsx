@@ -8,8 +8,8 @@ export default function Condicional () {
     const [condicional, setCondicional] = useState('')
     const [phrase, setPhrase] = useState('')
 
-    const showPhrase = (e: any) => {
-        e.preventDefault()
+    const showPhrase = (e?: BaseSyntheticEvent) => {
+        e?.preventDefault()
         setCondicional(phrase)
     }
 
