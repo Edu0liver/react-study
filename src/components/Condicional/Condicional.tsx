@@ -5,21 +5,25 @@ import Button from "../Button/Button"
 
 export default function Condicional () {
 
-    const [condicional, setCondicional] = useState(false)
+    const [condicional, setCondicional] = useState('')
+    const [phrase, setPhrase] = useState('')
 
-    const showPhrase = (e: BaseSyntheticEvent) => {
+    const showPhrase = (e: any) => {
         e.preventDefault()
-        setCondicional(e.target[0].value)
+        setCondicional(phrase)
     }
+
+    const clearPhrase = () => setCondicional('')
 
     return (
         <>
-        <Form onSubmit={showPhrase}>
-            <Input type='text' name='phrase' placeholder='Digite'/>
-            <Button type='submit'>Submit</Button>
+        <Form >
+            <Input type='text' name='phrase' onChange={(e) => setPhrase(e.target.value)} placeholder='Digite'/>
+            <Button type='submit' onClick={showPhrase}>Submit</Button>
+            <Button type='submit' onClick={clearPhrase}>Clear</Button>
         </Form>
 
-        {condicional && (
+        {condicional && ( 
             <div>
                 <h1>{condicional}</h1>
             </div>
