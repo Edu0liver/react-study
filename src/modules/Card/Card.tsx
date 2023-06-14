@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Pessoa from "../components/Pessoa";
-import Button from "../components/Button";
 import './Card.css'
+import Button from "../../components/Button/Button";
+import Pessoa from "../../components/Pessoa/Pessoa";
 
 interface PessoaType {
   id: number;
